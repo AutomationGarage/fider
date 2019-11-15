@@ -11,7 +11,7 @@ export const TermsOfService: React.FunctionComponent<{}> = () => {
 
   if (fider.settings.hasLegal) {
     return (
-      <a href="/terms" target="_blank">
+      <a href="https://autobits.org/terms" target="_blank">
         Terms of Service
       </a>
     );
@@ -24,7 +24,7 @@ export const PrivacyPolicy: React.FunctionComponent<{}> = () => {
 
   if (fider.settings.hasLegal) {
     return (
-      <a href="/privacy" target="_blank">
+      <a href="https://autobits.org/privacy" target="_blank">
         Privacy Policy
       </a>
     );
