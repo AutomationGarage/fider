@@ -91,11 +91,11 @@ export class PostInput extends React.Component<PostInputProps, PostInputState> {
           onChange={this.setDescription}
           value={this.state.description}
           minRows={5}
-          placeholder="Describe your suggestion (optional)"
+          placeholder="Опишите ваше предложение в чуть более развёрнутом виде (по желанию)"
         />
         <MultiImageUploader field="attachments" maxUploads={3} previewMaxWidth={100} onChange={this.setAttachments} />
         <Button type="submit" color="positive" onClick={this.submit}>
-          Submit
+          Отправить
         </Button>
       </>
     );

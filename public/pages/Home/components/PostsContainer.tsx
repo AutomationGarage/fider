@@ -123,7 +123,7 @@ export class PostsContainer extends React.Component<PostsContainerProps, PostsCo
               field="query"
               icon={this.state.query ? FaTimes : FaSearch}
               onIconClick={this.state.query ? this.clearSearch : undefined}
-              placeholder="Search..."
+              placeholder="Найти"
               value={this.state.query}
               onChange={this.handleSearchFilterChanged}
             />
@@ -132,7 +132,7 @@ export class PostsContainer extends React.Component<PostsContainerProps, PostsCo
         <ListPosts
           posts={this.state.posts}
           tags={this.props.tags}
-          emptyText={"No results matched your search, try something different."}
+          emptyText={"Сожалеем, поиск не дал результатов."}
         />
         {this.state.loading && <Loader />}
         {showMoreLink && (

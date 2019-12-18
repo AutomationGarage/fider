@@ -19,14 +19,14 @@ export const PostFilter = (props: PostFilterProps) => {
   };
 
   const options: DropDownItem[] = [
-    { value: "trending", label: "Trending" },
-    { value: "recent", label: "Recent" },
-    { value: "most-wanted", label: "Most Wanted" },
-    { value: "most-discussed", label: "Most Discussed" }
+    { value: "trending", label: "В тренде" },
+    { value: "recent", label: "Cвежее" },
+    { value: "most-wanted", label: "Самое востребованное" },
+    { value: "most-discussed", label: "Наиболее обсуждаемое" }
   ];
 
   if (fider.session.isAuthenticated) {
-    options.push({ value: "my-votes", label: "My Votes" });
+    options.push({ value: "my-votes", label: "С моим голосом" });
   }
 
   PostStatus.All.filter(s => s.filterable && props.countPerStatus[s.value]).forEach(s => {
@@ -48,7 +48,7 @@ export const PostFilter = (props: PostFilterProps) => {
     <div>
       <span className="subtitle">View</span>
       <DropDown
-        header="What do you want to see?"
+        header="Показать"
         className="l-post-filter"
         inline={true}
         style="simple"

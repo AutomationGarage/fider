@@ -39,23 +39,23 @@ export class NotificationsPanel extends React.Component<NotificationsPanelProps,
 
     const button = this.state.subscribed ? (
       <Button fluid={true} onClick={this.subscribeOrUnsubscribe}>
-        <FaVolumeMute /> Unsubscribe
+        <FaVolumeMute /> Отписаться
       </Button>
     ) : (
       <Button fluid={true} onClick={this.subscribeOrUnsubscribe}>
-        <FaVolumeUp /> Subscribe
+        <FaVolumeUp /> Подписаться
       </Button>
     );
 
     const text = this.state.subscribed ? (
-      <span className="info">You’re receiving notifications about activity on this post.</span>
+      <span className="info">Вы получаете уведомления об активности этого предложения.</span>
     ) : (
-      <span className="info">You'll not receive any notification about this post.</span>
+      <span className="info">Вы не будете получать уведомлений об этом предложении.</span>
     );
 
     return (
       <>
-        <span className="subtitle">Notifications</span>
+        <span className="subtitle">Уведомления</span>
         <List>
           <ListItem>
             {button}
