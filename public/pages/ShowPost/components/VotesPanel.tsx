@@ -34,14 +34,14 @@ export const VotesPanel = (props: VotesPanelProps) => {
   return (
     <>
       <VotesModal post={props.post} isOpen={isVotesModalOpen} onClose={closeModal} />
-      <span className="subtitle">Voters</span>
+      <span className="subtitle">Идею поддерживают</span>
       <div className="l-votes-list">
         {props.votes.map(x => (
           <Avatar key={x.user.id} user={x.user} />
         ))}
         {extraVotesCount > 0 && (
           <span onClick={openModal} className={moreVotesClassName}>
-            +{extraVotesCount} more
+            + ёще {extraVotesCount}
           </span>
         )}
         {props.votes.length > 0 && extraVotesCount === 0 && canShowAll() && (
@@ -49,7 +49,7 @@ export const VotesPanel = (props: VotesPanelProps) => {
             see details
           </span>
         )}
-        {props.votes.length === 0 && <span className="info">None yet</span>}
+        {props.votes.length === 0 && <span className="info">Пока никто</span>}
       </div>
     </>
   );

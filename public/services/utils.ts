@@ -18,18 +18,18 @@ export const classSet = (input?: any): string => {
 };
 
 const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
+  "января",
+  "февраля",
+  "марта",
+  "апреля",
+  "мая",
+  "июня",
+  "июля",
+  "августа",
+  "сентября",
+  "октября",
+  "ноября",
+  "декабря"
 ];
 
 export const currencySymbol = (currencyCode: string): string => {
@@ -56,21 +56,21 @@ export const formatDate = (input: Date | string): string => {
   const hours = twoDigits(date.getHours());
   const minutes = twoDigits(date.getMinutes());
 
-  return `${monthNames[monthIndex]} ${day}, ${year} · ${hours}:${minutes}`;
+  return `${day} ${monthNames[monthIndex]} ${year}, ${hours}:${minutes}`;
 };
 
 const templates: { [key: string]: string } = {
-  seconds: "less than a minute",
-  minute: "about a minute",
-  minutes: "%d minutes",
-  hour: "about an hour",
-  hours: "about %d hours",
-  day: "a day",
-  days: "%d days",
-  month: "about a month",
-  months: "%d months",
-  year: "about a year",
-  years: "%d years"
+  seconds: "менее минуты",
+  minute: "около минуты",
+  minutes: "%d мин.",
+  hour: "около часа",
+  hours: "около %d ч.",
+  day: "один день",
+  days: "%d д.",
+  month: "около месяца",
+  months: "%d мес.",
+  year: "около года",
+  years: "%d года"
 };
 
 const template = (t: string, n: number): string => {
@@ -95,7 +95,7 @@ export const timeSince = (now: Date, date: Date): string => {
       (days < 45 && template("month", 1)) ||
       (days < 365 && template("months", days / 30)) ||
       (years < 1.5 && template("year", 1)) ||
-      template("years", years)) + " ago"
+      template("years", years)) + " назад"
   );
 };
 
