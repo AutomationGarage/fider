@@ -29,7 +29,7 @@ export class DangerZone extends React.Component<{}, DangerZoneState> {
       e.preventEnable();
       navigator.goHome();
     } else {
-      notify.error("Failed to delete your account. Try again later");
+      notify.error("Не удалось удалить ваш аккаунт. Пожалуйста, попробуйте ещё раз");
     }
   };
 
@@ -37,34 +37,34 @@ export class DangerZone extends React.Component<{}, DangerZoneState> {
     return (
       <div className="l-danger-zone">
         <Modal.Window isOpen={this.state.clicked} center={false} onClose={this.onCancel}>
-          <Modal.Header>Delete account</Modal.Header>
+          <Modal.Header>Удалить аккаунт</Modal.Header>
           <Modal.Content>
             <p>
-              When you choose to delete your account, we will erase all your personal information forever. The content
-              you have published will remain, but it will be anonymised.
+              Если вы удалите ваш аккаунт, мы удалим всю вашу персональную информацию навсегда. 
+              Опубликованный вами контент останется, но будет анонимизирован.
             </p>
             <p>
-              This process is irreversible. <strong>Are you sure?</strong>
+              Этот действие необратимо. <strong>Вы абсолютно уверены?</strong>
             </p>
           </Modal.Content>
           <Modal.Footer>
             <Button color="danger" size="tiny" onClick={this.onConfirm}>
-              Confirm
+              Подтвердить
             </Button>
             <Button color="cancel" size="tiny" onClick={this.onCancel}>
-              Cancel
+              Отменить
             </Button>
           </Modal.Footer>
         </Modal.Window>
 
-        <h4>Delete account</h4>
+        <h4>Удалить аккаунт</h4>
         <p className="info">
-          When you choose to delete your account, we will erase all your personal information forever. The content you
-          have published will remain, but it will be anonymised.
+          Если вы удалите ваш аккаунт, мы удалим всю вашу персональную информацию навсегда.
+          Опубликованный вами контент останется, но будет анонимизирован.
         </p>
-        <p className="info">This process is irreversible. Please be certain.</p>
+        <p className="info">Этот действие необратимо. Продолжайте только если вы абсолютно уверены.</p>
         <Button color="danger" size="tiny" onClick={this.onClickDelete}>
-          Delete My Account
+          Удалить мой аккаунт
         </Button>
       </div>
     );

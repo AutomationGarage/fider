@@ -59,23 +59,23 @@ export default class MyNotificationsPage extends React.Component<MyNotifications
   public render() {
     return (
       <div id="p-my-notifications" className="page container">
-        <Heading title="Notifications" subtitle="Stay up to date with what's happening" icon={FaBell} />
+        <Heading title="Уведомления" subtitle="Будьте в курсе происходящего" icon={FaBell} />
 
         <h4>
-          Unread
+          Новые
           {this.state.unread.length > 0 && (
             <span className="mark-as-read" onClick={this.markAllAsRead}>
-              Mark All as Read
+              Пометить все как "Прочитанные"
             </span>
           )}
         </h4>
         <List>
           {this.state.unread.length > 0 && this.items(this.state.unread)}
-          {this.state.unread.length === 0 && <span className="info">No unread notifications.</span>}
+          {this.state.unread.length === 0 && <span className="info">Нет новых уведомлений.</span>}
         </List>
         {this.state.recent.length > 0 && (
           <>
-            <h4>Read on last 30 days</h4>
+            <h4>Прочитанные (За последние 30 дней)</h4>
             <List>
               <ListItem>{this.items(this.state.recent)}</ListItem>
             </List>

@@ -107,19 +107,19 @@ export default class MySettingsPage extends React.Component<MySettingsPageProps,
   public render() {
     const changeEmail = (
       <span className="ui info clickable" onClick={this.startChangeEmail}>
-        change
+        поменять
       </span>
     );
 
     return (
       <div id="p-my-settings" className="page container">
         <Modal.Window isOpen={this.state.showModal} onClose={this.closeModal}>
-          <Modal.Header>Confirm your new email</Modal.Header>
+          <Modal.Header>Подтвердите ваш новый email</Modal.Header>
           <Modal.Content>
             <div>
               <p>
-                We have just sent a confirmation link to <b>{this.state.newEmail}</b>. <br /> Click the link to update
-                your email.
+                Мы отправили письмо с ссылкой для подтверждения на <b>{this.state.newEmail}</b>. <br />
+                Нажмите на ссылку, чтобы обновить ваш email.
               </p>
               <p>
                 <a href="#" onClick={this.closeModal}>
@@ -130,7 +130,7 @@ export default class MySettingsPage extends React.Component<MySettingsPageProps,
           </Modal.Content>
         </Modal.Window>
 
-        <Heading title="Settings" subtitle="Manage your profile settings" icon={FaRegAddressCard} />
+        <Heading title="Настройки" subtitle="Настройки профиля" icon={FaRegAddressCard} />
 
         <div className="row">
           <div className="col-lg-7">
@@ -146,46 +146,44 @@ export default class MySettingsPage extends React.Component<MySettingsPageProps,
               >
                 <p className="info">
                   {Fider.session.user.email || this.state.changingEmail
-                    ? "Your email is private and will never be publicly displayed."
-                    : "Your account doesn't have an email."}
+                    ? "Ваш email хранится в секрете и никогда не отображается публично."
+                    : "В вашем профиле не указан email."}
                 </p>
                 {this.state.changingEmail && (
                   <>
                     <Button color="positive" size="mini" onClick={this.submitNewEmail}>
-                      Confirm
+                      Подтвердить
                     </Button>
                     <Button color="cancel" size="mini" onClick={this.cancelChangeEmail}>
-                      Cancel
+                      Отменить
                     </Button>
                   </>
                 )}
               </Input>
 
-              <Input label="Name" field="name" value={this.state.name} maxLength={100} onChange={this.setName} />
+              <Input label="Имя" field="name" value={this.state.name} maxLength={100} onChange={this.setName} />
 
               <Select
-                label="Avatar"
+                label="Аватар"
                 field="avatarType"
                 defaultValue={this.state.avatarType}
                 options={[
-                  { label: "Letter", value: UserAvatarType.Letter },
+                  { label: "Инициалы", value: UserAvatarType.Letter },
                   { label: "Gravatar", value: UserAvatarType.Gravatar },
-                  { label: "Custom", value: UserAvatarType.Custom }
+                  { label: "Загрузить свой", value: UserAvatarType.Custom }
                 ]}
                 onChange={this.avatarTypeChanged}
               >
                 {this.state.avatarType === UserAvatarType.Gravatar && (
                   <p className="info">
-                    A{" "}
-                    <a href="https://en.gravatar.com" target="_blank">
+                    <a href="https://ru.gravatar.com" target="_blank">
                       Gravatar
                     </a>{" "}
-                    will be used based on your email. If you don't have a Gravatar, a letter avatar based on your
-                    initials is generated for you.
+                    привязанный к вашему email. Если у вас нет Граватара, мы используем авто-сгенерированный аватар с вашими инициалами.
                   </p>
                 )}
                 {this.state.avatarType === UserAvatarType.Letter && (
-                  <p className="info">A letter avatar based on your initials is generated for you.</p>
+                  <p className="info">Авто-сгенерированный аватар с вашими инициалами.</p>
                 )}
                 {this.state.avatarType === UserAvatarType.Custom && (
                   <ImageUploader
@@ -195,8 +193,7 @@ export default class MySettingsPage extends React.Component<MySettingsPageProps,
                     bkey={Fider.session.user.avatarBlobKey}
                   >
                     <p className="info">
-                      We accept JPG, GIF and PNG images, smaller than 100KB and with an aspect ratio of 1:1 with minimum
-                      dimensions of 50x50 pixels.
+                      Формат: JPG, GIF и PNG. Максимальный размер файла: 100 Кбайт. Соотношение сторон: 1:1. Минимальный размер: 50x50 пикселей.
                     </p>
                   </ImageUploader>
                 )}
@@ -208,7 +205,7 @@ export default class MySettingsPage extends React.Component<MySettingsPageProps,
               />
 
               <Button color="positive" onClick={this.confirm}>
-                Save
+                Сохранить изменения
               </Button>
             </Form>
           </div>
