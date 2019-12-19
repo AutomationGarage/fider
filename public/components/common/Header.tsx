@@ -35,10 +35,10 @@ export const Header = () => {
         <FaUser /> <span>{fider.session.user.name}</span>
       </div>
       <a href="/settings" className="c-menu-user-item">
-        Settings
+        Настройки
       </a>
       <a href="/notifications" className="c-menu-user-item">
-        Notifications
+        Уведомления
         {unreadNotifications > 0 && <div className="c-unread-count">{unreadNotifications}</div>}
       </a>
       <div className="c-menu-user-divider" />
@@ -52,7 +52,7 @@ export const Header = () => {
         <div key={5} className="c-menu-user-divider" />
       ]}
       <a href="/signout?redirect=/" className="c-menu-user-item signout">
-        Sign out
+        Выйти
       </a>
     </div>
   );
@@ -72,7 +72,7 @@ export const Header = () => {
             <div onClick={showModal} className="c-menu-item-signin">
               {fider.session.isAuthenticated && <Avatar user={fider.session.user} />}
               {unreadNotifications > 0 && <div className="c-unread-dot" />}
-              {!fider.session.isAuthenticated && <span>Sign in</span>}
+              {!fider.session.isAuthenticated && <span>Войти</span>}
               {fider.session.isAuthenticated && <FaCaretDown />}
               {items}
             </div>

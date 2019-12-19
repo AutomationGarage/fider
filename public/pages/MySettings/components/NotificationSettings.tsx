@@ -43,7 +43,7 @@ export class NotificationSettings extends React.Component<NotificationSettingsPr
 
   private icon(settingsKey: string, channel: Channel) {
     const active = this.isEnabled(settingsKey, channel);
-    const label = channel === WebChannel ? "Web" : "Email";
+    const label = channel === WebChannel ? "На странице уведомлений" : "По еmail";
     return (
       <Toggle
         key={`${settingsKey}_${channel}`}
@@ -62,25 +62,25 @@ export class NotificationSettings extends React.Component<NotificationSettingsPr
     if (!webEnabled && !emailEnabled) {
       return (
         <p className="info">
-          You'll <strong>NOT</strong> receive any notification about this event.
+          Вы <strong>не будете</strong> видеть или получать уведомлений о {about}.
         </p>
       );
     } else if (webEnabled && !emailEnabled) {
       return (
         <p className="info">
-          You'll receive <strong>web</strong> notifications about {about}.
+          Вы будете видеть уведомления о {about} <strong>на странице уведомлений</strong>.
         </p>
       );
     } else if (!webEnabled && emailEnabled) {
       return (
         <p className="info">
-          You'll receive <strong>email</strong> notifications about {about}.
+          Вы будете получать уведомления о {about} <strong>по email</strong>.
         </p>
       );
     } else if (webEnabled && emailEnabled) {
       return (
         <p className="info">
-          You'll receive <strong>web</strong> and <strong>email</strong> notifications about {about}.
+          Вы будете видеть уведомления о {about} <strong>на странице уведомлений</strong> и получать их <strong>по email</strong>.
         </p>
       );
     }
@@ -90,25 +90,25 @@ export class NotificationSettings extends React.Component<NotificationSettingsPr
   public render() {
     return (
       <>
-        <Field label="Notifications">
-          <p className="info">Use following panel to choose which events you'd like to receive notification</p>
+        <Field label="Уведомления">
+          <p className="info">Выберите как вы хотите получать уведомления</p>
         </Field>
 
         <div className="notifications-settings">
           <Segments>
             <Segment>
-              <span className="event-title">New Post</span>
-              {this.info("event_notification_new_post", "new posts on this site", "new posts on this site")}
+              <span className="event-title">Новые идеи и предложения</span>
+              {this.info("event_notification_new_post", "новых постах на этом сайте", "new posts on this site")}
               <p>
                 {this.icon("event_notification_new_post", WebChannel)}
                 {this.icon("event_notification_new_post", EmailChannel)}
               </p>
             </Segment>
             <Segment>
-              <span className="event-title">Discussion</span>
+              <span className="event-title">Обсуждения</span>
               {this.info(
                 "event_notification_new_comment",
-                "comments on posts you've subscribed to",
+                "комментариях к постам, на которые вы подписались",
                 "comments on all posts unless individually unsubscribed"
               )}
               <p>
@@ -117,10 +117,10 @@ export class NotificationSettings extends React.Component<NotificationSettingsPr
               </p>
             </Segment>
             <Segment>
-              <span className="event-title">Status Changed</span>
+              <span className="event-title">Смена статуса постов</span>
               {this.info(
                 "event_notification_change_status",
-                "status change on posts you've subscribed to",
+                "смене статуса постов, на которые вы подписались",
                 "status change on all posts unless individually unsubscribed"
               )}
               <p>
