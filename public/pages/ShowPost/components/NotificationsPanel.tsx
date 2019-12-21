@@ -48,9 +48,9 @@ export class NotificationsPanel extends React.Component<NotificationsPanelProps,
     );
 
     const text = this.state.subscribed ? (
-      <span className="info">Вы получаете уведомления об активности этого предложения.</span>
+      <span className="info">Вы получаете уведомления об активности этого отзыва.</span>
     ) : (
-      <span className="info">Вы не будете получать уведомлений об этом предложении.</span>
+      <span className="info">Вы не будете получать уведомлений об этом отзыве.</span>
     );
 
     return (

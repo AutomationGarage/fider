@@ -3,9 +3,9 @@ body:
 <tr>
   <td>
     {{ if .duplicate }}
-      <strong>{{ .title }} ({{ .postLink }})</strong> has been closed as a <strong>{{ .status }}</strong> of {{ .duplicate }}.
+      <strong>{{ .title }} ({{ .postLink }})</strong> был закрыт как <strong>{{ .status }}</strong> отзыва {{ .duplicate }}.
     {{ else }}
-      Status of <strong>{{ .title }} ({{ .postLink }})</strong> has changed to <strong>{{ .status }}</strong>.
+      Статус отзыва <strong>{{ .title }} ({{ .postLink }})</strong> был изменен на <strong>{{ .status }}</strong>.
     {{ end }}
   </td>
 </tr>
@@ -21,7 +21,7 @@ body:
   <td>
     <span style="color:#666;font-size:11px">
     — <br />
-    You are receiving this because you are subscribed to this thread. <br />
+    Вы получили это сообщение, потому что вы подписаны на уведомления об этом отзыве. <br />
     {{ .view }}, {{ .unsubscribe }} or {{ .change }}.
     </span>
   </td>

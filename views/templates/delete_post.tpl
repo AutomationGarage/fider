@@ -2,7 +2,7 @@ subject: [{{ .tenantName }}] {{ .title }}
 body:
 <tr>
   <td>
-    <strong>{{ .title }}</strong> has been <strong>deleted</strong>.
+    <strong>{{ .title }}</strong> <strong>был удалён</strong>.
   </td>
 </tr>
 <tr>
@@ -17,7 +17,7 @@ body:
   <td>
     <span style="color:#666;font-size:11px">
     — <br />
-    You are receiving this because you are subscribed to this thread. <br />
+    Вы получили это сообщение, потому что вы подписаны на уведомления об этом отзыве. <br />
     {{ .change }}.
     </span>
   </td>
