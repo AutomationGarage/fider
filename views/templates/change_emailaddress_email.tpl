@@ -1,10 +1,10 @@
-subject: Confirm your new email
+subject: Подтвердите ваш новый email
 body:
 <tr>
   <td>
-    <p>Hi <strong>{{ .name }}</strong>,</p>
-    <p>You have requested to change your email from {{ .oldEmail }} to {{ .newEmail }}.</p>
-    <p>Click the link below to confirm this operation.</p>
+    <p>Здравствуйте <strong>{{ .name }}</strong>,</p>
+    <p>Вы попросили поменять ваш email с {{ .oldEmail }} на {{ .newEmail }}.</p>
+    <p>Для подтверждения, нажмите на ссылку ниже.</p>
   </td>
 </tr>
 <tr>
@@ -12,6 +12,6 @@ body:
 </tr>
 <tr>
   <td>
-    <span style="color:#666;font-size:11px">This link will expire in 24 hours and can only be used once.</span>
+    <span style="color:#666;font-size:11px"></span>Эта ссылка может быть использована в течение 24 часов и только один раз.</span>
   </td>
 </tr>

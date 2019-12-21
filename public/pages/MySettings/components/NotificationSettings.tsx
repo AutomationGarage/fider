@@ -97,8 +97,8 @@ export class NotificationSettings extends React.Component<NotificationSettingsPr
         <div className="notifications-settings">
           <Segments>
             <Segment>
-              <span className="event-title">Новые идеи и предложения</span>
-              {this.info("event_notification_new_post", "новых постах на этом сайте", "new posts on this site")}
+              <span className="event-title">Новые отзывы</span>
+              {this.info("event_notification_new_post", "новых отзывах на этом сайте", "новых отзывах на этом сайте")}
               <p>
                 {this.icon("event_notification_new_post", WebChannel)}
                 {this.icon("event_notification_new_post", EmailChannel)}
@@ -108,7 +108,7 @@ export class NotificationSettings extends React.Component<NotificationSettingsPr
               <span className="event-title">Обсуждения</span>
               {this.info(
                 "event_notification_new_comment",
-                "комментариях к постам, на которые вы подписались",
+                "комментариях к отзывам, на которые вы подписались",
                 "comments on all posts unless individually unsubscribed"
               )}
               <p>
@@ -117,10 +117,10 @@ export class NotificationSettings extends React.Component<NotificationSettingsPr
               </p>
             </Segment>
             <Segment>
-              <span className="event-title">Смена статуса постов</span>
+              <span className="event-title">Смена статуса отзыва</span>
               {this.info(
                 "event_notification_change_status",
-                "смене статуса постов, на которые вы подписались",
+                "смене статуса отзывов, на которые вы подписались",
                 "status change on all posts unless individually unsubscribed"
               )}
               <p>

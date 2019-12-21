@@ -2,7 +2,7 @@ subject: [{{ .tenantName }}] {{ .title }}
 body:
 <tr>
   <td>
-    <strong>{{ .userName }}</strong> left a comment on 
+    <strong>{{ .userName }}</strong> оставил комментарий к 
     <strong>
       {{ .title }} ({{ .postLink }})
     </strong>
@@ -20,8 +20,8 @@ body:
   <td>
     <span style="color:#666;font-size:11px">
     — <br />
-    You are receiving this because you are subscribed to this thread. <br />
-    {{ .view }}, {{ .unsubscribe }} or {{ .change }}.
+    Вы получили это сообщение, потому что вы подписаны на уведомления об этом отзыве. <br />
+    {{ .view }}, {{ .unsubscribe }} или {{ .change }}.
     </span>
   </td>
 </tr>

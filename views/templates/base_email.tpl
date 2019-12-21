@@ -29,7 +29,7 @@
 			</tr>
 			<tr>
 				<td>
-					<span style="color:#666;font-size:11px">This email was sent from a notification-only address that cannot accept incoming email. Please do not reply to this message.</span>
+					<span style="color:#666;font-size:11px">Пожалуйста, не отвечайте на это письмо. Оно было отправлено с почтового ящика, который не может принимать входящие сообщения.</span>
 				</td>
 			</tr>
 			<tr>

@@ -2,7 +2,7 @@ subject: [{{ .tenantName }}] {{ .title }}
 body:
 <tr>
   <td>
-    <strong>{{ .userName }}</strong> created a new post <strong>{{ .title }} ({{ .postLink }})</strong>.
+    <strong>{{ .userName }}</strong> оставил новый отзыв <strong>{{ .title }} ({{ .postLink }})</strong>.
   </td>
 </tr>
 <tr>
@@ -17,7 +17,7 @@ body:
   <td>
     <span style="color:#666;font-size:11px">
     — <br />
-    You are receiving this because you are subscribed to this event. <br />
+    Вы получили это сообщение, потому что вы подписаны на email-уведомления о новых отзывах. <br />
     {{ .view }} or {{ .change }}.
     </span>
   </td>
