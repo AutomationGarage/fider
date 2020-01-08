@@ -44,7 +44,7 @@ export const Header = () => {
   );
 
   const customStyle = {
-    marginLeft: 0 !important;
+    marginLeft: '0 !important'
   };
 
   const items = fider.session.isAuthenticated && (
