@@ -32,7 +32,7 @@ export const Header = () => {
   const languageMenuItems = (
     <div className="c-menu-user">
       <div className="c-menu-user-heading">
-        <span>Language</span>
+        <span>Язык</span>
       </div>
       <a href="https://feedback.autobits.org" className="c-menu-user-item">
         English
@@ -83,7 +83,7 @@ export const Header = () => {
             <span>{fider.session.tenant.name}</span>
           </a>
           <div className="c-menu-item-signin">
-            <span>English</span>
+            <span>Русский</span>
             <FaCaretDown />
             {languageMenuItems}
           </div>
