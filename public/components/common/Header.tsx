@@ -29,6 +29,20 @@ export const Header = () => {
 
   const hideModal = () => setIsSignInModalOpen(false);
 
+  const languageMenuItems = (
+    <div className="c-menu-user">
+      <div className="c-menu-user-heading">
+        <span>Language</span>
+      </div>
+      <a href="https://feedback.autobits.org" className="c-menu-user-item">
+        English
+      </a>
+      <a href="https://ru.feedback.autobits.org/" className="c-menu-user-item">
+        Русский
+      </a>
+    </div>
+  );
+
   const items = fider.session.isAuthenticated && (
     <div className="c-menu-user">
       <div className="c-menu-user-heading">
@@ -68,6 +82,11 @@ export const Header = () => {
             <TenantLogo size={100} />
             <span>{fider.session.tenant.name}</span>
           </a>
+          <div className="c-menu-item-signin">
+            <span>English</span>
+            <FaCaretDown />
+            {languageMenuItems}
+          </div>
           {showRightMenu && (
             <div onClick={showModal} className="c-menu-item-signin">
               {fider.session.isAuthenticated && <Avatar user={fider.session.user} />}
