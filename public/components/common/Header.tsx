@@ -3,7 +3,7 @@ import "./Header.scss";
 import React, { useState, useEffect } from "react";
 import { SignInModal, EnvironmentInfo, Avatar, TenantLogo, TenantStatusInfo } from "@fider/components";
 import { actions } from "@fider/services";
-import { FaUser, FaCog, FaCaretDown, FaLanguage } from "react-icons/fa";
+import { FaUser, FaCog, FaCaretDown } from "react-icons/fa";
 import { useFider } from "@fider/hooks";
 
 export const Header = () => {
@@ -42,10 +42,6 @@ export const Header = () => {
       </a>
     </div>
   );
-
-  const customStyle = {
-    marginLeft: '0 !important'
-  };
 
   const items = fider.session.isAuthenticated && (
     <div className="c-menu-user">
@@ -87,13 +83,12 @@ export const Header = () => {
             <span>{fider.session.tenant.name}</span>
           </a>
           <div className="c-menu-item-signin">
-            <FaLanguage />
             <span>English</span>
             <FaCaretDown />
             {languageMenuItems}
           </div>
           {showRightMenu && (
-            <div onClick={showModal} className="c-menu-item-signin" style={customStyle}>
+            <div onClick={showModal} className="c-menu-item-signin">
               {fider.session.isAuthenticated && <Avatar user={fider.session.user} />}
               {unreadNotifications > 0 && <div className="c-unread-dot" />}
               {!fider.session.isAuthenticated && <span>Sign in</span>}
